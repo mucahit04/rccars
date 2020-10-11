@@ -1,0 +1,482 @@
+* {                 /* to set some properties to all elements */
+  margin: 0;              
+  padding: 0;
+  box-sizing: box-border;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;    /*to align the elements in the body more flexible*/
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://hdqwalls.com/download/ford-remote-control-rc-drift-car-pic-1280x720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+}
+.container {      /*to put navigation bar cards in a place*/
+  max-width: 1000px;
+  position: relative;
+  bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 1s;
+}
+.container .card {/*styling each card */
+  position: relative;
+  width: 200px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  transition: 0.8s;
+  color: #000033;
+  font-weight: bold;
+}
+.container:hover .card { /*styling for cards when hovering on container*/
+  filter: blur(2px);
+  transform: scale(0.5);
+}
+.container .card:hover { /*styling the card which cursor is hovering on*/
+  filter: blur(0px);
+  transform: scale(1);
+}
+.container .card:before { /*to adding no content but a background for styling while hovering on the cards without any change on the actual content of the cards*/
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d9d9d9;
+  z-index: 1;
+  transition: 0.8s;
+}
+.container .card:hover:before { /*styling only the added backgrounds to the cards*/
+  background: #000033;
+  transform: scaleY(1.2);
+  
+}
+.container .card .content {
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+.container .card:hover .content {
+  color: #eead0e;
+}
+.container .card .content h2 {
+  font-size: 1.6em;
+  color:#eead0e;
+  text-shadow:2px 2px 2px black;
+}
+.container .card .content p {
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.container .card .content a {/*styling the links in the each card*/
+  display: inline-block;
+  margin-top: 35px;
+  padding: 5px 10px;
+  background: #000033;
+  color: #eead0e;
+  text-decoration: none;
+}
+.container .card .content a:hover { /*changing cursor into pointer while hovering on the links in the content class*/
+  cursor: pointer;
+}
+.container .card:hover .content a {/*changing the style of the links in the each card regarding to the change on the cards while hovering on them*/
+  background: #eead0e;
+  color: #000033;
+}
+.electric-container { /*creating main container for electric cars section*/
+  position: absolute;
+  float: left;
+  left: 0;
+  top: 700px;
+  width: 100%;
+  height: 720px;
+  margin-top: 20px;
+  color: #fff;
+  transition: 1s;
+}
+.bg-image-electric {/*adding a background image to the electric cars section. Used this way in order to play with its style later on rather than just background attribute. In this case I made the background picture go blurred while the cursor is hovering on the p element in this section.*/
+  width: 100%;
+  height: 720px;
+  position: absolute;
+  z-index: 1;
+  background-image: url("https://d2otfaypcda2dg.cloudfront.net/blog/wp-content/uploads/2017/10/how-fast-are-rc-cars_traxxas-defender-mustang.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  transition: 1s;
+}
+.electric-container #electric-cars:hover,
+.electric-info:hover { /*scaling up effect while hovering on the selected elements*/
+  transform: scale(1.1);
+}
+.electric-info:hover + .bg-image-electric {/*giving blurring effect to the background image while hovering on the p element in the section. "+" selects the element immediately after the hovered element. In this case while hovering on the info element, the bg image goes blur.*/
+  filter: blur(5px);
+}
+.electric-container p,
+#electric-cars {
+  width: 40%;
+  }
+.electric-info {
+  background: rgba(238, 173, 14, 0.9);
+  color: rgb(0, 0, 51);
+  font-size: 1.4em;
+  position: absolute;
+  float: left;
+  top: 90px;
+  left: 40px;
+  width: 40%;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 3;
+  transition: 1s;
+}
+#electric-cars {
+  background: #000033;
+  color: rgb(238, 173, 14);
+  width: 20%;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+  float: left;
+  left: 190px;
+  transition: 1s;
+  margin-top: 20px;
+  padding: 5px;
+  z-index: 3;
+}
+.nitro-container {/*creating main container for nitro cars section*/
+  position: absolute;
+  float: right;
+  right: 0px;
+  top: 1040px;
+  width: 100%;
+  height: 720px;
+  margin-top: 0px;
+  transition: 0.5s;
+}
+.bg-image-nitro {/*adding a background image to the section. Used this way in order to play with its style later on rather than just background attribute. In this case I made the background picture go blurred while the cursor is hovering on the p element in this section.*/
+  width: 100%;
+  height: 720px;
+  position: absolute;
+  z-index: 1;
+  background-image: url("https://i.ytimg.com/vi/I1o9spYr_Oo/maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+}
+.nitro-info:hover + .bg-image-nitro {/*giving blurring effect to the background image while hovering on the p element in the section. "+" selects the element immediately after the hovered element. In this case while hovering on the info element, the bg image goes blur.*/
+  filter: blur(5px);
+}
+.nitro-info {
+  background: rgba(238, 173, 14, 0.9);
+  color: rgb(0, 0, 51);
+  position: absolute;
+  float: right;
+  top: 90px;
+  right: 40px;
+  width: 40%;
+  font-size: 1.4em;
+  margin-right: 15px;
+  padding: 5px;
+  font-weight: bold;
+  z-index: 3;
+  transition: 1s;
+}
+#nitro-cars {
+  background: #000033;
+  color: rgb(238, 173, 14);
+  width: 15%;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+  float: right;
+  right: 225px;
+  transition: 1s;
+  margin-top: 20px;
+  z-index: 3;
+  padding: 5px;
+}
+.nitro-container #nitro-cars:hover,
+.nitro-info:hover {/*scaling up effect while hovering on the selected elements*/
+  transform: scale(1.1);
+}
+.comparison-container {/*creating main container for comparison section*/
+  position: absolute;
+  float: right;
+  right: 0px;
+  top: 1780px;
+  width: 100%;
+  height: 720px;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+#comparison-title {
+  background: #000033;
+  color: rgb(238, 173, 14);
+  position: relative;
+  float: left;
+  left: 550px;
+  width: 25%;
+  font-size: 2em;
+  text-align: center;
+  transition: 1s;
+  margin-top: 20px;
+  z-index: 4;
+}
+.comparison-container #comparison-title:hover{
+  transform: scale(1.1);
+}
+.comparison-table {/*a table to compare the nitro and electric cars*/
+  position: absolute;
+  float: left;
+  left: 120px;
+  top: 80px;
+  width: 80%;
+  margin: auto;
+  z-index: 4;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  background-color: #d9d9d9;
+  border-left:6px solid #eead0e;
+  border-top:6px solid #eead0e;
+  }
+th {
+  background-color: rgb(160,160,200);
+  color: #000033;
+  padding: 15px;
+  border-bottom:2px solid white;
+  text-align:left;
+}
+td {
+  text-align: left;
+  padding: 5px 5px 5px 15px;
+  border-bottom: 2px solid white;
+}
+
+.comparison-table tr:hover {
+  background-color: #F7C331;
+  color: black;
+}
+.comparison-table tr:hover th{
+  background-color:rgb(160,160,200);
+  }
+.bg-image-evsn {/*adding a background image to the section. Used this way in order to play with its style later on rather than just background attribute. In this case I made the background picture go blur while the cursor is hovering on the p element in this section.*/
+  width: 100%;
+  height: 690px;
+  position: absolute;
+  z-index: 2;
+  background-image: url("https://hips.hearstapps.com/roa.h-cdn.co/assets/15/12/768x384/landscape-1426692936-rcbig.gif?resize=1200:*");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+}
+.comparison-table:hover + .bg-image-evsn {/*giving blurring effect to the background image while hovering on the p element in the section. "+" selects the element immediately after the hovered element. In this case while hovering on the info element, the bg image goes blur.*/
+  filter: blur(5px);
+}
+.on-road-container {/*creating main container for on-road section*/
+  position: absolute;
+  float: left;
+  left: 0px;
+  top: 2520px;
+  width: 100%;
+  height: 720px;
+  margin-top: 20px;
+}
+.bg-image-onroad {/*adding a background image to the section. Used this way in order to play with its style later on rather than just background attribute. In this case I made the background picture go blur while the cursor is hovering on the p element in this section.*/
+  width: 100%;
+  height: 720px;
+  position: absolute;
+  z-index: 1;
+  background-image: url("https://i.ytimg.com/vi/dSlGoSbpFQ8/maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s;
+}
+.on-road-info:hover + .bg-image-onroad {/*giving blurring effect to the background image while hovering on the p element in the section. "+" selects the element immediately after the hovered element. In this case while hovering on the info element, the bg image goes blur.*/
+  filter: blur(5px);
+}
+.on-road-info {
+  background: rgba(238, 173, 14, 0.9);
+  color: rgb(0, 0, 51);
+  position: absolute;
+  float: left;
+  top: 80px;
+  left: 40px;
+  width: 40%;
+  font-size: 1.4em;
+  margin-right: 15px;
+  padding-left: 10px;
+  font-weight: bold;
+  z-index: 3;
+  transition: 1s;
+}
+#on-road-cars {
+  background: #000033;
+  color: rgb(238, 173, 14);
+  width: 20%;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+  float: left;
+  left: 170px;
+  transition: 1s;
+  margin-top: 20px;
+  z-index: 3;
+}
+.on-road-container #on-road-cars:hover,
+.on-road-info:hover {/*scaling up effect while hovering on the selected elements*/
+  transform: scale(1.1);
+}
+.off-road-container {/*creating main container for off-road section*/
+  display: block;
+  position: absolute;
+  top: 3270px;
+  width: 100%;
+  height: 680px;
+  margin-top: 20px;
+}
+.bg-image-offroad {/*adding a background image to the section. Used this way in order to play with its style later on rather than just background attribute. In this case I made the background picture go blur while the cursor is hovering on the p element in this section.*/
+  position: absolute;
+  width: 100%;
+  height: 680px;
+  background-image: url("https://i.pinimg.com/originals/18/cc/11/18cc116691d5d96f92fa357adbce5d87.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: 1s;
+}
+.off-road-info:hover + .bg-image-offroad {/*giving blurring effect to the background image while hovering on the p element in the section. "+" selects the element immediately after the hovered element. In this case while hovering on the info element, the bg image goes blur.*/
+  filter: blur(5px);
+}
+.off-road-container #off-road-cars:hover,
+.off-road-info:hover {/*scaling up effect while hovering on the selected elements*/
+  transform: scale(1.1);
+  margin-left: 20px;
+}
+.off-road-info {
+  background: rgba(238, 173, 14, 0.9);
+  color: rgb(0, 0, 51);
+  position: absolute;
+  float: right;
+  top: 80px;
+  right: 40px;
+  width: 40%;
+  font-size: 1.4em;
+  margin-right: 15px;
+  padding-left: 10px;
+  font-weight: bold;
+  z-index: 3;
+  transition: 1s;
+}
+#off-road-cars {
+  background: #000033;
+  color: rgb(238, 173, 14);
+  width: 20%;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+  float: right;
+  right: 190px;
+  margin-top: 20px;
+  z-index: 3;
+  transition: 1s;
+}
+.footer {   /*styling the footer div*/
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #000033;
+  z-index: 4;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align:center;
+}
+.footer-info {
+  position: absolute;
+  float: left;
+  left:10px;
+  top: 20px;
+  margin:10px;
+  margin-top: 0px;
+  width: 18%;
+  text-align: center;
+  color: #eead0e;
+  font-style: italic;
+  font-size: 0.85em;
+}
+.footer .copyright {
+  position: absolute;
+  float: right;
+  right: 500px;
+  top: 70px;
+  margin: 15px;
+  text-align: center;
+  width: 40%;
+  color: #eead0e;
+  font-size: 0.75em;
+}
+.site-map-links {
+  position: relative;
+  top: -20px;
+  left:0px;
+}
+.site-map-links a {
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  transition: 1s;
+}
+.site-map-links a:hover {
+  color: yellow;
+}
+.contact-container {
+  position: absolute;
+  float: right;
+  right: 0px;
+  width: 350px;
+  bottom: 5px;
+  z-index: 4;
+  color: white;
+}
+.contact-container .fa {/*styling the icons in the contact container*/
+  position: relative;
+  float: right;
+  right: 80px;
+  bottom: 25px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: yellow;
+  z-index: 4;
+}
+.contact-container p {
+  position: relative;
+  float: right;
+  right: 20px;
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+  z-index: 4;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.contact-title {
+  position: absolute;
+  float: right;
+  right: 150px;
+  top: 15px;
+  color: #fefefe;
+  margin-bottom: 0.8em;
+  font-size: 1em;
+}
